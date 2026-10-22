@@ -89,7 +89,7 @@ says why, including when the target runs on a design system you should import ra
 
 ## Step 1 — navigate, and decide where the code goes
 
-1. Motion instrumentation must exist before the page's own scripts do, so the HOOKS IIFE rides in on this navigation: **Step 2a — capture motion. Read `references/motion.md` §M0 now**: the `initScript` hooks must be installed before the page's own scripts run, so read this before you navigate.
+1. Motion instrumentation must exist before the page's own scripts do, so the HOOKS IIFE rides in on this navigation: **Step 2a — capture motion. Read `references/motion.md` §M0 now**: the `initScript` hooks must be installed before the page's own scripts run.
 2. `cdp:new_page {url, isolatedContext:"clone"}` for a clean first-visit state, then `cdp:navigate_page {url, type:"url", initScript: HOOKS}`. `initScript` applies to the next navigation only — re-pass it after every reload. Navigation failures do not throw: read the response text for `Unable to navigate`.
 3. `cdp:wait_for {text:["<a real string from the footer>"]}`, then poll `cdp:evaluate_script` for `document.readyState === 'complete'` and `document.fonts.status === 'loaded'` before measuring anything typographic.
 4. Consent banner: `cdp:take_snapshot {filePath}`, `cdp:click {uid}` the accept control, re-snapshot. An overlay left up sets `body{overflow:hidden}` and destroys every `scrollHeight` you are about to read.
@@ -239,5 +239,3 @@ Close by linking `.clone/CLONE-REPORT.md` and `.clone/PROVENANCE.md`.
 | 30 candidate sections on one page | `KEEP` too low | `references/sectioning.md` — retune and dedup |
 | Every section fails the same geometry probe | foundation is wrong, not the sections | `references/assembly.md` — systemic-cause first |
 | Mobile or dark values missing entirely | running on the Playwright fallback (no `emulate`) | `references/troubleshooting.md` — fallback map |
-
-<!-- SPEC-GAP: SPEC §H sets SKILL.md at 150-200 lines (ceiling 240) while the authoring task asked for 220-320; this file lands inside SPEC's ceiling. SPEC §H also says the third-party-marks policy note appears only in references/assets.md and CLONE-REPORT.md, but the locked user decision and the authoring task both require one short note here — included once in step 5, ungated. Headline gate numbers are restated here (task requirement) with per-property tolerances left to references/assembly.md. -->

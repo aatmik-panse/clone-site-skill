@@ -380,11 +380,3 @@ gated in `references/sectioning.md`).
 | 8-bit RGBA clustering clips wide gamut | clustering only — the emitted token is always the raw computed string |
 | Hover/focus/`:active` and scroll-dependent state are not in this pass | `references/motion.md` (its sweep re-reads the `sticky[]`/`fixed[]` paths); `:active` is unverifiable through this MCP |
 | JS-driven layout (masonry, Swiper) yields px no CSS produced; content behind consent or auth never renders | `stack.animation[]` flags the first — treat those sections as library-backed; dismiss the dialog before pass 2 (`references/troubleshooting.md`) for the second |
-
-<!-- SPEC-GAP: (1) SPEC §C reserves no `.clone/raw/` filename for the installer pass, whose return is a ~40-byte
-     summary; this file uses `install-foundation.json` so the "never call it without filePath" rule still holds.
-     (2) SPEC §E says the `filePath` dump "may carry a wrapper" — in chrome-devtools-mcp 1.6.0 it is exactly
-     `JSON.stringify(returnValue)` with no wrapper (src/tools/script.ts:148-165); the defensive slice is kept
-     anyway because it costs nothing. (3) SPEC D1 types `space.grids[].gapPx` / `space.flex[].gapPx` as a single
-     number, which cannot express `row-gap != column-gap`; the extractor emits the column gap with a row-gap
-     fallback and §8 points readers at `sections.json`'s per-section `layout.gap` string for the asymmetric case. -->

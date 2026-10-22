@@ -424,11 +424,3 @@ Every value traces to a field above. Note what did **not** happen: `rgb(226, 232
 `50%`; `p`'s `trackingNormal` meant no `--text-base--letter-spacing` line at all. The one derived number is
 `--container-prose: 42.5rem` — `68ch` measured 680px on the article's own font, 680 ÷ 16 = 42.5. A derived
 token is a deviation, and deviations get listed in `CLONE-REPORT.md`.
-
-<!-- SPEC-GAP: over SPEC §H's 340-line ceiling. The step-500 ramp trap (§1) and SKILL.md step 3's four gate
-     clauses (§8) are both mandatory content added after that budget was set, and both token modes must be shown
-     in full; nothing here duplicates a sibling reference. Naming beyond SPEC §G, all inside the sanctioned
-     `--clone-*` non-utility prefix: `--clone-z-*` (from topology.zLadder), `--clone-dur-*` (Tailwind v4 has no
-     `--duration-*` namespace), `--clone-header-h`. `--space-*` is used as SPEC §G pins it, with the honest note
-     that it generates no utilities. -->
-

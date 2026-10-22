@@ -429,8 +429,3 @@ WRITE report.md, MAX 400 WORDS: ## Built / ## Done-check / ## Deviations / ## Re
 | a remote URL left where the agent can copy it | the "clone" fetches from the origin; only `spec.assets[].ref` may appear in code |
 | gate numbers retyped instead of pasted from `references/assembly.md` | it optimizes toward the wrong target and passes its own self-check |
 | a `motion` / `responsive` entry with no `evidence` | invented animation, defended in `report.md` as measured |
-
-<!-- SPEC-GAP: SPEC §D defines no spec.json schema, so §1 fixes it as `"contract": 1` (the research brief's shape) with
-     SPEC's pinned width-keyed maps and capture filenames. `pinned` (§5) is likewise new: it carries the trap-(c)
-     findings from references/sectioning.md §4, which have no home in the §D2 section schema. Gate numbers are never
-     duplicated into spec.json — per §H they live only in references/assembly.md, reaching the agent via {{GATE_TABLE}}. -->

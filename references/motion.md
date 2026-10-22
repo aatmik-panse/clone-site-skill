@@ -375,6 +375,9 @@ gets one line calling it a deliberate deviation.
 `page()` fills the scroll chrome — `scrollBehavior`, `overscroll`, `snapType`, `snapChildren`,
 `scrollPaddingTop`, `viewTransitions`, `smoothScrollLib` — plus `pinned[]` (sticky/fixed elements, the #1
 clone miss after motion itself) and the `units` block whose `scrollbar` value the responsive sweep needs.
+SPEC §D3 declares `"page"` twice in motion.json (as {id,url} and again as the scroll-chrome object);
+duplicate JSON keys are lossy, so `page:{id,url}` stays (matching D4) and the scroll-chrome block is named
+`pageScroll`, which is what `motion.page()` returns.
 Then split the merged truth per section, keyed by `sectionId`, using each section's `box` from
 `.clone/sections.json` to decide ownership. `bySection.<id>` carries `entrance`, `scrollLinked`, `hover`,
 `loops`, `reducedMotion`, `gaps` — numbers, never "make it feel smooth". **`evidence` is required on every
@@ -457,9 +460,3 @@ Structural checks, run before you claim motion parity. Numeric tolerances for ev
 8. Everything unverifiable is labelled rather than silently upgraded — `:active` `authored-not-verified`,
    reduced-motion runtime unmeasured, rAF physics fitted, canvas/WebGL/Lottie mirrored or substituted — and
    listed in `motion.json.gaps` and `CLONE-REPORT.md`.
-
-<!-- SPEC-GAP: SPEC §D3 declares `"page"` twice in motion.json (as {id,url} and again as the scroll-chrome
-object); duplicate JSON keys are lossy, so `page:{id,url}` stays (matching D4) and the scroll-chrome block is
-named `pageScroll`, which is what `motion.page()` returns. extract-motion.js also exposes `motion.fit()` and
-`motion.scrollTargets()` beside SPEC §A's eight passes — helpers promoted for reuse, not new passes — and the
-live half of the interactive-state pass is `states(sel, waitMs)`, not a ninth method. -->
