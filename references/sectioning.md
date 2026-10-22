@@ -373,10 +373,3 @@ The agent-facing wording of this map is in `references/agent-brief.md`; the stat
 | mobile manifest has different ids | you adopted the secondary width's ids | secondary widths never own ids; merge by hash into the primary skeleton |
 | `docHeight` grows every pass | infinite scroll, or a marquee appending nodes | segment from one prewarmed pass, note it in `warnings[]` |
 | `sumSectionH` ≪ `docHeight` | trap (b), or a section dropped by the sliver merge | run the §4 audit; check `extraSelectors[]` before re-cutting |
-
-<!-- SPEC-GAP: raw dumps used here that §C does not enumerate — `skeletons-<w>.json`, `capture-<id>.json`,
-     `section-audit-<w>.json`, `unwrap-contents.json`, `routes.json`, `restore.json` — follow §C's existing
-     `raw/<pass>.json` pattern; tall-section tiles reuse §C's `orig-w<width>-tile-<NN>.webp` name inside the section
-     dir. Route discovery and the §4 audit have no `scripts/*.js` file in §A, so those two one-shot payloads are
-     inlined here rather than adding a script. §A says extract-sections.js "returns the section manifest" while §E.2
-     says an installer returns a summary — §E wins: install returns `{ok:true,…}`, `all()` returns the manifest. -->

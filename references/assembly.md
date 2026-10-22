@@ -425,10 +425,3 @@ measured delta, the probable cause, the one-line manual fix.
 | 06-testimonials | w1440 pixelDiff | 0.071 | 0.025 | avatars render at 2× the measured box | set width/height 48 on the img |
 | 06-testimonials | geometry box.w | -13.33px | ±4px | grid gap 40 vs measured 32 | `gap-8` instead of `gap-10` |
 ```
-
-<!-- SPEC-GAP: §C pins captures as orig/clone-w<w>.webp but §E6 requires visual-diff.mjs to take PNG (no WebP
-     decode without npm deps), so this file adds a PNG copy of the same capture — orig/clone-w<w>.png, shot
-     back-to-back with the webp — and dumps clone-side extractor output to
-     .clone/raw/{sections,foundation}-clone-<w>.json (nearest pinned convention to foundation-dark.json).
-     references/sectioning.md §7 now shoots the orig PNG back-to-back with the webp as well, so §4's re-shoot
-     paragraph is a genuine fallback rather than the default path. -->
